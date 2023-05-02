@@ -123,7 +123,16 @@ for n in range(10):
     print()
 
 ledfile.write("0");
+
+time.sleep(5)
+
+while True:
+    blink_led(2)
+    time.sleep(1)
+
+# never reached:
 ledfile.close()
 
-with open ("/sys/class/leds/led0/trigger","w") as trig:
-    trig.write("mmc0") # Restore act LED to trigger on file access.
+# Never restore led.
+#with open ("/sys/class/leds/led0/trigger","w") as trig:
+#    trig.write("mmc0") # Restore act LED to trigger on file access.
